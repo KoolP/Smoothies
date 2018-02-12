@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Smoothies</string>
+    <string name="smoothie_logo">Smoothie logo</string>
+    <string name="smoothie_picture">smoothie picture</string>
+    <string name="ingredientsHeader">Ingredients:</string>
+    <string-array name="options">
+        <item>Drinks</item>
+        <item>Food</item>
+    </string-array>
+</resources>

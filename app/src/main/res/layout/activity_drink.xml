@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="se.koolsport.smoothies.DrinkActivity"
+    >
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/smoothie_picture" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ingredientsHeader"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="4dp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/ingredients"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="4dp"
+        android:textSize="12sp"
+        android:textStyle="italic" />
+</LinearLayout>
