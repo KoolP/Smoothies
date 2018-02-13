@@ -9,8 +9,6 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.koolsport.smoothies.FoodsDbModel;
-
 /**
  * Created by Hinnenberg on 2018-02-12.
  */
@@ -43,7 +41,7 @@ public class FoodsDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(TABLE_FOODS_CREATE);
         Log.i(LOGTAG, "Foods Table is created");
 
-        db.execSQL("INSERT INTO foods (foodsName, foodsDescrition, foodsIngredients) " +
+        db.execSQL("INSERT INTO foods (foodsName, foodsDescription, foodsIngredients) " +
                 "VALUES ('Porridge', 'A staple food', 'Oats'), " +
                 "('Finnish Porridge', 'More staple food', 'Rye'), " +
                 "('Oat Meal', 'Another staple food', 'Oats')");
