@@ -5,6 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,17 +16,17 @@ import android.database.Cursor;
 
 import se.koolsport.smoothie.R;
 
-public class DrinkActivity extends Activity {
+public class DrinkActivity extends AppCompatActivity {
     public static final String EXTRA_DRINKID = "drinkId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drink);
+        toolbarStylez();
 
         //Get the drink from the intent, smoothie id user chose
         int drinkId = (Integer)getIntent().getExtras().get(EXTRA_DRINKID);
-        //Drink drink = Drink.DRINKS[drinkId];
 
 
         //Create cursor
@@ -40,7 +43,7 @@ public class DrinkActivity extends Activity {
             //Move to first record in the Cursor
             if (cursor.moveToFirst()) {
 
-                //get the smoothie details from curos
+                //get the smoothie details from cursor
                 String nameText = cursor.getString(0);
                 String descriptionText = cursor.getString(1);
                 String ingredientsText = cursor.getString(2);
@@ -76,22 +79,23 @@ public class DrinkActivity extends Activity {
             toast.show();
         }
 
+    }
 
+    //Inflates menu adds items to the appbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_drink, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-        /*
-        //Populate the drink name
-        TextView name = (TextView)findViewById(R.id.name);
-        name.setText(drink.getName());
-
-        //Populate the drink description
-        TextView description = (TextView)findViewById(R.id.description);
-        description.setText(drink.getDescription());
-
-        //Populate the drink image
-        ImageView photo = (ImageView)findViewById(R.id.photo);
-        photo.setImageResource(drink.getImageResourceId());
-        photo.setContentDescription(drink.getName());
-        */
-
+    private void toolbarStylez() {
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        //TitleText color
+        //toolbar.setTitle(getResources().getString(R.string.app_name));
+        toolbar.setTitleTextColor(getColor(R.color.colorAccent));
+        //Adding the back button
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

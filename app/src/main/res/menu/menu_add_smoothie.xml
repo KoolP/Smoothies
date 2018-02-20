@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_add_smoothie"
+        android:title="@string/smoothies_category"
+        android:icon="@mipmap/ic_action_add2"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
+
+</menu>

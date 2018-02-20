@@ -16,8 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="se.koolsport.smoothies.DrinkCategoryActivity" />
-        <activity android:name="se.koolsport.smoothies.DrinkActivity"></activity>
-    </application>
+        <activity android:name="se.koolsport.smoothies.DrinkCategoryActivity"
+            android:label="@string/smoothies_category"
+            android:parentActivityName="se.koolsport.smoothies.TopLevelActivity"/>
+        <activity android:name="se.koolsport.smoothies.DrinkActivity"
+            android:label="@string/smoothies_category"
+            android:parentActivityName="se.koolsport.smoothies.DrinkCategoryActivity"/>
+        <activity
+            android:name="se.koolsport.smoothies.AddSmoothiesActivity"
+            android:label="@string/addSmoothie"
+            android:parentActivityName="se.koolsport.smoothies.DrinkCategoryActivity"/>
+        </application>
+
 
 </manifest>

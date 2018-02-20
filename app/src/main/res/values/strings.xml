@@ -1,10 +1,22 @@
 <resources>
-    <string name="app_name">Smoothies</string>
+    <string name="app_name">Smoothies &amp; Snacks</string>
+    <string name="smoothies_category">Smoothies</string>
     <string name="smoothie_logo">Smoothie logo</string>
     <string name="smoothie_picture">smoothie picture</string>
     <string name="ingredientsHeader">Ingredients:</string>
+    <string name="addSmoothie">Add smoothie</string>
+    <string name="choose_color">Smoothie Color</string>
+    <string name="smoothie_name">Smoothie Name</string>
+    <string name="smoothie_quote">Smoothie Quote</string>
+    <string name="smoothie_ingredients">Smoothie Ingredients</string>
+    <string name="colorText">Color</string>
+    <string name="hint_smoothie_name">Smoothie Name</string>
+    <string name="hint_smoothie_quote">Smoothie Quote</string>
+    <string name="hint_smoothie_ingredients">Smoothie Ingredients</string>
+    <string name="button_save">Save</string>
     <string-array name="options">
-        <item>Drinks</item>
-        <item>Food</item>
+        <item>Smoothies</item>
+        <item>Snacks</item>
     </string-array>
+
 </resources>
