@@ -4,16 +4,10 @@ package se.koolsport.smoothies;
  * Created by Hinnenberg on 2018-02-10.
  */
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteDatabase;
-import android.content.Context;
 import android.content.ContentValues;
-import android.nfc.Tag;
-import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 import se.koolsport.smoothie.R;
 
@@ -80,7 +74,7 @@ public class SmoothiesDatabaseHelper extends SQLiteOpenHelper {
     public boolean deleteSmoothie(SQLiteDatabase db, String name, String description, String ingredients, int resourceID) {
         ContentValues smoothieValues = new ContentValues();
 
-        String[] selection = new String[] {Integer.toString(drinkId)};
+        String[] selection = new String[] {Integer.toString(resourceID)};
 
         int result = db.delete("SMOOTHIES", "_id = ?", selection);
 

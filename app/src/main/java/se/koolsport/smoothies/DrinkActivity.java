@@ -1,23 +1,26 @@
 package se.koolsport.smoothies;
 
-import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.database.Cursor;
-
 
 import se.koolsport.smoothie.R;
 
 public class DrinkActivity extends AppCompatActivity {
     public static final String EXTRA_DRINKID = "drinkId";
+
+    private int drinkId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class DrinkActivity extends AppCompatActivity {
         toolbarStylez();
 
         //Get the drink from the intent, smoothie id user chose
-        int drinkId = (Integer)getIntent().getExtras().get(EXTRA_DRINKID);
+        drinkId = (Integer)getIntent().getExtras().get(EXTRA_DRINKID);
 
 
         //Create cursor
@@ -78,6 +81,24 @@ public class DrinkActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT);
             toast.show();
         }
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.action_delete_drink) {
+            Log.d("TEST","Delete clicked!");
+            SmoothiesDatabaseHelper smoothiesDatabaseHelper = new SmoothiesDatabaseHelper(this);
+            SQLiteDatabase db = smoothiesDatabaseHelper.getWritableDatabase();
+            smoothiesDatabaseHelper.deleteSmoothie(db,"","","",drinkId);
+            Intent intent = new Intent(this, DrinkCategoryActivity.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
 
     }
 
